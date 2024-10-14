@@ -1,0 +1,10 @@
+[package]
+name = "record"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+vec = []
+formulas = []
+obj = []
+full = ["vec", "formulas"]
