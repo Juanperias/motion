@@ -8,3 +8,6 @@ pub mod obj;
 
 #[cfg(feature = "formulas")]
 pub mod formulas;
+
+#[cfg(feature = "forces")]
+pub mod forces;

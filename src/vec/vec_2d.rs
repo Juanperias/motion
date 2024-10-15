@@ -1,5 +1,4 @@
-use crate::formulas::{dot::length, pitagoras::calculate_pt};
-
+use crate::formulas::dot::length;
 #[derive(Debug, Clone, Copy)]
 pub struct Vec2d {
     pub x: f32,

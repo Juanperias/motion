@@ -6,5 +6,6 @@ edition = "2021"
 [features]
 vec = []
 formulas = []
-obj = []
-full = ["vec", "formulas"]
+obj = ["forces"]
+forces = []
+full = ["vec", "formulas", "obj", "forces"]
