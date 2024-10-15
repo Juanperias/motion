@@ -2,7 +2,7 @@ use crate::obj::obj_2d::Object2d;
 
 use super::force::Force;
 
-pub const EARTH_GRAVITY: f32 = 9.807;
+pub const EARTH_GRAVITY: f32 = -9.807;
 
 #[derive(Debug)]
 pub struct Gravity {

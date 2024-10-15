@@ -1,0 +1,8 @@
+[package]
+name = "sdl_example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+record = { path = "<record-path>", features = ["full"] }
+sdl2 = { version = "0.37.0", features = ["gfx"] }
