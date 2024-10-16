@@ -8,20 +8,26 @@ pub const EARTH_GRAVITY: f32 = -9.807;
 pub struct Gravity {
     pub force: f32,
     pub time: f32,
+    pub delta_time: f32,
 }
 
 impl Force for Gravity {
     fn apply_2d(&self, obj: &mut Object2d) {
         let y = obj.vec.y + obj.velocity.y * self.time - 0.5 * self.force * (self.time * self.time);
         obj.vec.y = y;
-        obj.velocity.y -= self.force * self.time;
+        obj.velocity.y -= self.force * self.time * self.delta_time;
     }
 }
 
 #[inline]
-pub fn gravity<F: Into<f32>, T: Into<f32>>(force: F, time: T) -> Gravity {
+pub fn gravity<F: Into<f32>, T: Into<f32>, D: Into<f32>>(
+    force: F,
+    time: T,
+    delta_time: D,
+) -> Gravity {
     Gravity {
         force: force.into(),
         time: time.into(),
+        delta_time: delta_time.into(),
     }
 }
