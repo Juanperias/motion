@@ -8,4 +8,7 @@ vec = []
 formulas = []
 obj = ["forces"]
 forces = []
-full = ["vec", "formulas", "obj", "forces"]
+event_loop = []
+full = ["vec", "formulas", "obj", "forces", "event_loop"]
+
+[dependencies]
