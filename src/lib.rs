@@ -11,3 +11,6 @@ pub mod formulas;
 
 #[cfg(feature = "forces")]
 pub mod forces;
+
+#[cfg(feature = "event_loop")]
+pub mod event_loop;
