@@ -6,9 +6,10 @@ edition = "2021"
 [features]
 vec = []
 formulas = []
-obj = ["forces"]
+obj = ["forces", "vec"]
 forces = []
 event_loop = []
 full = ["vec", "formulas", "obj", "forces", "event_loop"]
+
 
 [dependencies]
