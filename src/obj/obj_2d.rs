@@ -1,4 +1,4 @@
-use crate::{forces::force::Force, vec::vec_2d::Vec2d};
+use crate::{collision::shape::Shape, forces::force::Force, vec::vec_2d::Vec2d};
 
 #[derive(Debug, Clone)]
 pub struct Object2d {
@@ -8,6 +8,7 @@ pub struct Object2d {
     pub velocity: Vec2d,
     pub acceleration: Vec2d,
     pub radius: f32,
+    pub shape: Shape,
 }
 
 impl Object2d {
@@ -18,6 +19,7 @@ impl Object2d {
         velocity: Vec2d,
         acceleration: Vec2d,
         radius: f32,
+        shape: Shape,
     ) -> Self {
         Object2d {
             vec,
@@ -26,6 +28,7 @@ impl Object2d {
             velocity,
             acceleration,
             radius,
+            shape,
         }
     }
     pub fn apply<T: Force>(&mut self, force: T) {
@@ -41,6 +44,7 @@ pub fn obj2d<V: Into<Vec2d>>(
     velocity: V,
     acceleration: V,
     radius: f32,
+    shape: Shape,
 ) -> Object2d {
     Object2d::new(
         vec.into(),
@@ -49,5 +53,6 @@ pub fn obj2d<V: Into<Vec2d>>(
         velocity.into(),
         acceleration.into(),
         radius,
+        shape,
     )
 }
