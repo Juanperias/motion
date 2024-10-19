@@ -1,6 +1,6 @@
 use crate::vec::vec_2d::Vec2d;
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq)]
 pub enum Shape {
     None,
     Circle,

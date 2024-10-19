@@ -1,6 +1,6 @@
 use crate::{collision::shape::Shape, forces::force::Force, vec::vec_2d::Vec2d};
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Copy)]
 pub struct Object2d {
     pub vec: Vec2d,
     pub density: f32,

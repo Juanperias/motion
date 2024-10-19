@@ -1,8 +1,10 @@
-use crate::{obj::obj_2d::Object2d, vec::vec_2d::Vec2d};
+use crate::vec::vec_2d::Vec2d;
 
-pub fn calculate(obj1: Object2d, obj2: Object2d) -> Vec2d {
-    let x = obj1.velocity.x * (obj1.mass - obj2.mass) + 2.0 * obj2.velocity.x * obj2.mass;
-    let y = obj1.velocity.y * (obj1.mass - obj2.mass) + 2.0 * obj2.velocity.y * obj2.mass;
-    let denominator = obj1.mass + obj2.mass;
-    Vec2d::new(x / denominator, y / denominator)
+pub fn calculate(v1: Vec2d, m1: f32, m2: f32, v2: Vec2d) -> Vec2d {
+    let numerator_x = v1.x * (m1 - m2) + 2.0 * v2.x * m2;
+    let numerator_y = v1.y * (m1 - m2) + 2.0 * v2.y * m2;
+
+    let denominator = m1 + m2;
+
+    Vec2d::new(numerator_x / denominator, numerator_y / denominator)
 }
