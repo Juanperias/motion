@@ -13,28 +13,22 @@ impl Collision2d {
     pub fn new(obj1: Object2d, obj2: Object2d) -> Self {
         Self { obj1, obj2 }
     }
-    pub fn collider<F>(&self, on_collide: F)
-    where
-        F: Fn(&Object2d, &Object2d),
-    {
-        let check = match (&self.obj1.shape, &self.obj2.shape) {
+    pub fn collider(&self) -> bool {
+        match (&self.obj1.shape, &self.obj2.shape) {
             (Shape::Circle, Shape::Circle) => self.circle_collision(),
             (Shape::AABB(_, _), Shape::AABB(_, _)) => self.aabb_collision(),
             _ => false,
-        };
-
-        if check {
-            on_collide(&self.obj1, &self.obj2);
         }
     }
+
     fn circle_collision(&self) -> bool {
-        if self.obj2.shape != Shape::Circle && self.obj1.shape != Shape::Circle {
+        if self.obj2.shape != Shape::Circle || self.obj1.shape != Shape::Circle {
             return false;
         }
         let distance = self.obj1.vec.distance(self.obj2.vec);
-        let vec1_magnitude = self.obj1.vec.magnitude();
-        let vec2_magnitude = self.obj2.vec.magnitude();
-        distance <= vec1_magnitude + vec2_magnitude
+        let radius1 = self.obj1.radius; // Asumiendo que tienes un campo radius en Object2d
+        let radius2 = self.obj2.radius;
+        distance <= (radius1 + radius2)
     }
     fn aabb_collision(&self) -> bool {
         let vec1 = self.obj1.shape.get_aabb();
