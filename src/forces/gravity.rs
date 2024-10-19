@@ -13,9 +13,10 @@ pub struct Gravity {
 
 impl Force for Gravity {
     fn apply_2d(&self, obj: &mut Object2d) {
-        let y = obj.vec.y + obj.velocity.y * self.time - 0.5 * self.force * (self.time * self.time);
-        obj.vec.y = y;
-        obj.velocity.y -= self.force * self.time * self.delta_time;
+        obj.vec.y += obj.velocity.y * self.delta_time
+            - 0.5 * self.force * (self.delta_time * self.delta_time);
+
+        obj.velocity.y -= self.force * self.delta_time;
     }
 }
 
