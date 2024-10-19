@@ -1,15 +1,13 @@
 extern crate sdl2;
 use record::collision::shape::Shape;
-use record::collision::{self, Collision2d};
-use record::forces::gravity::{gravity, EARTH_GRAVITY};
+use record::collision::Collision2d;
 use record::forces::r#move::{move2d, Direction2d};
 use record::formulas::elastic_collision;
-use record::obj::obj_2d::{obj2d, Object2d};
+use record::obj::obj_2d::obj2d;
 use record::vec::vec_2d::vec2;
 use sdl2::event::Event;
 use sdl2::gfx::primitives::DrawRenderer;
 use sdl2::pixels::Color;
-use std::collections;
 use std::time::{Duration, Instant};
 
 fn main() -> Result<(), String> {
@@ -34,7 +32,7 @@ fn main() -> Result<(), String> {
     let mut obj2 = obj2d(
         vec2(300.0, 200.0),
         2.0,
-        60.0,
+        2.0,
         vec2(0.0, 0.0),
         vec2(0.0, 0.0),
         20.0,
