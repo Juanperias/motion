@@ -1,12 +1,7 @@
-name: Release workflow for motion
+name: Release Crate
 
 on:
   push:
-    paths-ignore:
-      - ".github/"
-      - "release.toml"
-      - "LICENSE"
-      - "Readme.md"
     branches:
       - main
 
@@ -16,21 +11,15 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-          profile: minimal
+          override: true
 
-      - name: Install cargo-release
-        run: cargo install cargo-release
-
-      - name: Login to crates.io
-        uses: actions-rs/meta@v1
+      - name: Publish to crates.io
+        uses: katyo/publish-crates@v2
         with:
-          crates-io-token: ${{ secrets.CRATESTOKEN }}
-
-      - name: Release crate
-        run: cargo release --workspace
+          registry-token: ${{ secrets.CARGOTOKEN }}
