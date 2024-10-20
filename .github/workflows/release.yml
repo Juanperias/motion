@@ -7,6 +7,7 @@ on:
       - "release.toml"
       - "LICENSE"
       - "README.md"
+      - "CONTRIBUTING.md"
     branches:
       - main
 
