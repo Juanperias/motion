@@ -10,7 +10,7 @@ obj = ["forces", "vec"]
 forces = []
 event_loop = []
 collision = ["obj"]
-full = ["vec", "formulas", "obj", "forces", "event_loop", "collision"]
+default = ["vec", "formulas", "obj", "forces", "event_loop", "collision"]
 
 
 [dependencies]
