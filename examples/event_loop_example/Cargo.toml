@@ -4,4 +4,4 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-record = { path = "/home/juan/projects/record", features = ["full"] }
+motion = { path = "<motion-path>", features = ["full"] }

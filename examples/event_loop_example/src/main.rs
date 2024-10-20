@@ -1,6 +1,6 @@
 use std::{thread, time::Duration};
 
-use record::event_loop::{EventLoop, EventLoopConfig};
+use motion::event_loop::{EventLoop, EventLoopConfig};
 
 // The definition of this function depends on the context in which record is used
 fn sleep(duration: Duration) {
