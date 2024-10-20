@@ -6,9 +6,9 @@ version = 3
 name = "event_loop_example"
 version = "0.1.0"
 dependencies = [
- "record",
+ "motion",
 ]
 
 [[package]]
-name = "record"
+name = "motion"
 version = "0.1.0"
