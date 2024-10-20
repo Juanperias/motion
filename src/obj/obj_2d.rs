@@ -41,6 +41,7 @@ impl Object2d {
     /// ```
     /// let obj = Object2d::new(vec2(1.0, 2.0), 1.0, 1.0, vec2(0.0, 0.0), vec2(0.0, 0.0), 1.0, Shape::Circle);
     /// ```
+    #[must_use]
     pub fn new(
         vec: Vec2d,
         density: f32,
@@ -74,7 +75,7 @@ impl Object2d {
     /// let gravity = Gravity::new(EARTH_GRAVITY, 1.0, 0.016);
     /// obj.apply(gravity);
     /// ```
-    pub fn apply<T: Force>(&mut self, force: T) {
+    pub fn apply<T: Force>(&mut self, force: &T) {
         force.apply_2d(self);
     }
 }

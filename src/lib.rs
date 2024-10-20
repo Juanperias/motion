@@ -1,4 +1,5 @@
 #![no_std]
+#![allow(clippy::module_name_repetitions)]
 
 //! # Motion, Bare Metal physics engine
 //! **Motion** is a bare metal physics engine which is created to be easy to use.

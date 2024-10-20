@@ -30,6 +30,7 @@ impl Shape {
     /// # Panics
     ///
     /// Panics if the shape is not an AABB.
+    #[must_use]
     pub fn get_aabb(&self) -> (Vec2d, Vec2d) {
         if let Shape::AABB(v1, v2) = self {
             (*v1, *v2)

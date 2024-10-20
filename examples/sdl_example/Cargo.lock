@@ -34,7 +34,9 @@ checksum = "561d97a539a36e26a9a5fad1ea11a3039a67714694aaa379433e580854bc3dc5"
 
 [[package]]
 name = "motion"
-version = "0.1.0"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "01ad54e1f417c3110eb7f8cd6dd5b96e3c87136b7441b96fa7c796e30fcdb735"
 
 [[package]]
 name = "sdl2"

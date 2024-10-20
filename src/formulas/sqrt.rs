@@ -20,6 +20,7 @@
 /// # Returns
 ///
 /// The square root of the given number, or `NaN` if the number is negative.
+#[must_use]
 pub fn sqrt(number: f32) -> f32 {
     if number < 0.0 {
         return f32::NAN;
