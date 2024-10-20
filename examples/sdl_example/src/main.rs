@@ -1,10 +1,10 @@
 extern crate sdl2;
-use record::collision::shape::Shape;
-use record::collision::Collision2d;
-use record::forces::r#move::{move2d, Direction2d};
-use record::formulas::elastic_collision;
-use record::obj::obj_2d::obj2d;
-use record::vec::vec_2d::vec2;
+use motion::collision::shape::Shape;
+use motion::collision::Collision2d;
+use motion::forces::r#move::{move2d, Direction2d};
+use motion::formulas::elastic_collision;
+use motion::obj::obj_2d::obj2d;
+use motion::vec::vec_2d::vec2;
 use sdl2::event::Event;
 use sdl2::gfx::primitives::DrawRenderer;
 use sdl2::pixels::Color;
