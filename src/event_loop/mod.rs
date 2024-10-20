@@ -30,6 +30,7 @@ impl EventLoop {
     /// # Returns
     ///
     /// A new `EventLoop` instance.
+    #[must_use]
     pub fn new(config: EventLoopConfig) -> Self {
         Self { config }
     }
@@ -59,10 +60,10 @@ impl EventLoop {
         F: Fn(EventLoopConfig),
         SF: Fn(Duration),
     {
-        let dt = 1.0 / self.config.fps as f32;
+        let dt = 1 / self.config.fps;
         loop {
             code(self.config);
-            sleep(Duration::from_secs_f32(dt));
+            sleep(Duration::from_secs(u64::from(dt)));
         }
     }
 }

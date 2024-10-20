@@ -21,6 +21,7 @@ use super::sqrt::sqrt;
 /// # Returns
 ///
 /// The dot product of the two vectors.
+#[must_use]
 pub fn dot(u: Vec2d, v: Vec2d) -> f32 {
     u.x * v.x + u.y * v.y
 }
@@ -42,6 +43,7 @@ pub fn dot(u: Vec2d, v: Vec2d) -> f32 {
 /// # Returns
 ///
 /// The squared length of the vector.
+#[must_use]
 pub fn length2(u: Vec2d) -> f32 {
     dot(u, u)
 }
@@ -63,6 +65,7 @@ pub fn length2(u: Vec2d) -> f32 {
 /// # Returns
 ///
 /// The length of the vector.
+#[must_use]
 pub fn length(u: Vec2d) -> f32 {
     sqrt(length2(u))
 }

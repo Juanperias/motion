@@ -29,6 +29,7 @@ impl Collision2d {
     /// let obj2 = Object2d::new(/* parameters */);
     /// let collision = Collision2d::new(obj1, obj2);
     /// ```
+    #[must_use]
     pub fn new(obj1: Object2d, obj2: Object2d) -> Self {
         Self { obj1, obj2 }
     }
@@ -49,6 +50,7 @@ impl Collision2d {
     ///     println!("Collision detected!");
     /// }
     /// ```
+    #[must_use]
     pub fn collider(&self) -> bool {
         match (&self.obj1.shape, &self.obj2.shape) {
             (Shape::Circle, Shape::Circle) => self.circle_collision(),

@@ -4,5 +4,5 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-motion = { path = "<motion-path>" }
+motion = "*"
 sdl2 = { version = "0.37.0", features = ["gfx"] }

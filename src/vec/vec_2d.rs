@@ -30,6 +30,7 @@ impl Vec2d {
     /// assert_eq!(vec.x, 1.0);
     /// assert_eq!(vec.y, 2.0);
     /// ```
+    #[must_use]
     pub fn new(x: f32, y: f32) -> Self {
         Vec2d { x, y }
     }
@@ -45,6 +46,7 @@ impl Vec2d {
     /// assert_eq!(component.x, 3.0);
     /// assert_eq!(component.y, 4.0);
     /// ```
+    #[must_use]
     pub fn component(&self, target: Vec2d) -> Vec2d {
         Vec2d {
             x: (target.x - self.x),
@@ -60,6 +62,7 @@ impl Vec2d {
     /// let v = Vec2d::new(3.0, 4.0);
     /// assert_eq!(v.magnitude(), 5.0);
     /// ```
+    #[must_use]
     pub fn magnitude(&self) -> f32 {
         length(*self)
     }
@@ -73,6 +76,7 @@ impl Vec2d {
     /// let v2 = Vec2d::new(4.0, 6.0);
     /// assert_eq!(v1.distance(v2), 5.0);
     /// ```
+    #[must_use]
     pub fn distance(&self, target: Vec2d) -> f32 {
         let ab = self.component(target);
         length(ab)

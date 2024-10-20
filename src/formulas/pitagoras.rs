@@ -20,6 +20,7 @@ use super::sqrt::sqrt;
 /// # Returns
 ///
 /// The length of the hypotenuse calculated using the Pythagorean theorem.
+#[must_use]
 pub fn calculate_pt(a: f32, b: f32) -> f32 {
     let ab = a * a + b * b;
     sqrt(ab)

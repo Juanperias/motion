@@ -8,6 +8,7 @@ on:
       - "LICENSE"
       - "README.md"
       - "CONTRIBUTING.md"
+      - ".gitignore"
     branches:
       - main
 

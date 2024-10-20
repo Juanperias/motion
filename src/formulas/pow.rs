@@ -21,6 +21,7 @@
 /// # Returns
 ///
 /// The result of raising the base to the given exponent.
+#[must_use]
 pub fn powf(base: f32, exponent: i32) -> f32 {
     if exponent == 0 {
         return 1.0;

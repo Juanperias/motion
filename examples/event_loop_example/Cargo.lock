@@ -11,4 +11,6 @@ dependencies = [
 
 [[package]]
 name = "motion"
-version = "0.1.0"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "01ad54e1f417c3110eb7f8cd6dd5b96e3c87136b7441b96fa7c796e30fcdb735"
