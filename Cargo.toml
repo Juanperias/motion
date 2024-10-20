@@ -1,0 +1,16 @@
+[package]
+name = "motion"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+vec = []
+formulas = []
+obj = ["forces", "vec"]
+forces = []
+event_loop = []
+collision = ["obj"]
+default = ["vec", "formulas", "obj", "forces", "event_loop", "collision"]
+
+
+[dependencies]
