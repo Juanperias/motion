@@ -13,7 +13,7 @@ use std::{thread, time::Duration};
 
 use motion::event_loop::{EventLoop, EventLoopConfig};
 
-// The definition of this function depends on the context in which record is used
+// The definition of this function depends on the context in which motion is used
 fn sleep(duration: Duration) {
     thread::sleep(duration);
 }
@@ -28,15 +28,15 @@ fn main() {
 now we are going to do something more complex by creating an object
 
 ```rust
-    let mut obj = obj2d(
-        vec2(75.0, 200.0),
-        2.0,
-        2.0,
-        vec2(2.0, 231.0),
-        vec2(2.0, -240.0),
-        20.0,
-        Shape::Circle,
-    );
+    let obj = Object2dBuilder::new()
+        .position(vec2(2.0, 2.0))
+        .density(2.0)
+        .mass(3.0)
+        .velocity(vec2(4.0, 4.0))
+        .acceleration(vec2(3.0, 3.0))
+        .radius(2.0)
+        .shape(Shape::Circle)
+        .build();
 ```
 
 ## Why rust 🦀
