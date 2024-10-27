@@ -127,14 +127,31 @@ pub fn obj2d<V: Into<Vec2d>>(
     )
 }
 
+/// `Object2dBuilder` is a structure used for building `Object2d` instances.
+///
+/// This builder pattern allows for a more readable and organized way to create `Object2d`
+/// objects by setting various fields in a fluid and chainable manner.
 #[derive(Debug)]
 pub struct Object2dBuilder {
+    /// The position vector of the object.
     position: Vec2d,
+
+    /// The density of the object.
     density: f32,
+
+    /// The mass of the object.
     mass: f32,
+
+    /// The velocity vector of the object.
     velocity: Vec2d,
+
+    /// The acceleration vector of the object.
     acceleration: Vec2d,
+
+    /// The radius of the object.
     radius: f32,
+
+    /// The shape of the object.
     shape: Shape,
 }
 

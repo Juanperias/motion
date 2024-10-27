@@ -21,9 +21,9 @@
 //!
 //!    el.start(|_config| println!("Hello! in the event loop"), sleep);
 //!}
-//! // Extracted from: https://github.com/Juanperias/motion/blob/dev/examples/event_loop_example/src/main.rs
+//! https://github.com/Juanperias/motion/blob/main/examples/event_loop_example/src/main.rs
 //!```
-//! More examples in <https://github.com/Juanperias/motion/tree/dev/examples>
+//! More examples in <https://github.com/Juanperias/motion/tree/main/examples>
 //!
 
 #[cfg(feature = "vec")]
