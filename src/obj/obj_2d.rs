@@ -1,4 +1,8 @@
-use crate::{collision::shape::Shape, forces::force::Force, vec::vec_2d::Vec2d};
+use crate::{
+    collision::shape::Shape,
+    forces::force::Force,
+    vec::vec_2d::{vec2, Vec2d},
+};
 
 /// Represents a 2D object with physical properties and shape.
 #[derive(Debug, Clone, Copy)]
@@ -101,6 +105,7 @@ impl Object2d {
 /// ```
 /// let obj = obj2d(vec2(1.0, 2.0), 1.0, 1.0, vec2(0.0, 0.0), vec2(0.0, 0.0), 1.0, Shape::Circle);
 /// ```
+#[deprecated(since = "0.1.3", note = "Use the Object2dBuilder instead")]
 #[inline]
 pub fn obj2d<V: Into<Vec2d>>(
     vec: V,
@@ -120,4 +125,88 @@ pub fn obj2d<V: Into<Vec2d>>(
         radius,
         shape,
     )
+}
+
+#[derive(Debug)]
+pub struct Object2dBuilder {
+    #[allow(dead_code)]
+    position: Vec2d,
+    #[allow(dead_code)]
+    density: f32,
+    #[allow(dead_code)]
+    mass: f32,
+    #[allow(dead_code)]
+    velocity: Vec2d,
+    #[allow(dead_code)]
+    acceleration: Vec2d,
+    #[allow(dead_code)]
+    radius: f32,
+    #[allow(dead_code)]
+    shape: Shape,
+}
+
+impl Object2dBuilder {
+    #[must_use]
+    pub fn new() -> Self {
+        Object2dBuilder {
+            position: vec2(0.0, 0.0),
+            density: 0.0,
+            mass: 0.0,
+            velocity: vec2(0.0, 0.0),
+            acceleration: vec2(0.0, 0.0),
+            radius: 0.0,
+            shape: Shape::None,
+        }
+    }
+
+    pub fn position(mut self, vec: Vec2d) -> Self {
+        self.position = vec;
+        self
+    }
+
+    pub fn density(mut self, density: f32) -> Self {
+        self.density = density;
+        self
+    }
+
+    pub fn mass(mut self, mass: f32) -> Self {
+        self.mass = mass;
+        self
+    }
+
+    pub fn velocity(mut self, vec: Vec2d) -> Self {
+        self.velocity = vec;
+        self
+    }
+
+    pub fn acceleration(mut self, vec: Vec2d) -> Self {
+        self.acceleration = vec;
+        self
+    }
+    pub fn radius(mut self, radius: f32) -> Self {
+        self.radius = radius;
+        self
+    }
+    pub fn shape(mut self, shape: Shape) -> Self {
+        self.shape = shape;
+        self
+    }
+    #[must_use]
+    pub fn build(self) -> Object2d {
+        Object2d {
+            vec: self.position,
+            density: self.density,
+            mass: self.mass,
+            velocity: self.velocity,
+            acceleration: self.acceleration,
+            radius: self.radius,
+            shape: self.shape,
+        }
+    }
+}
+
+impl Default for Object2dBuilder {
+    fn default() -> Self {
+        Self::new()
+    }
 }
