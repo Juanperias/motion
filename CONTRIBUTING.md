@@ -2,7 +2,8 @@
 
 ## Creating a Branch
 
-To contribute, please create your own branch following this pattern: `<user>-dev`. This helps in keeping contributions organized and identifiable. After making your changes, contribute by making a pull request (PR) to the `dev` branch. Ensure that your branch is up to date with `dev` before creating a PR.
+To contribute, please create your own branch following this pattern: <user>-<feature>. This helps in keeping contributions organized and identifiable. After making your changes, contribute by making a pull request (PR) to the main branch. Ensure that your branch is up to date with main before creating a PR.
+
 
 ## Commit Messages
 
@@ -11,9 +12,3 @@ Commit messages should follow commit lint rules, and be clear in their objective
 ## Documenting Features
 
 If you add new features, remember to document them thoroughly. Update relevant sections in the codebase, including `README.md`, and any other documentation files. This helps other developers understand the changes and how to utilize the new features effectively.
-
-## Adding Dependencies
-
-Do not add dependencies unless it is strictly necessary. Consider the impact on the project, such as increased build times, potential security vulnerabilities, and maintenance overhead. If you must add a dependency, include a detailed justification in your PR, explaining why it is essential and how it benefits the project.
-
-Thank you for your contributions and for helping improve Motion! Your efforts are greatly appreciated.
