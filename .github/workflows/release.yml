@@ -1,9 +1,9 @@
 name: Release Crate
 
 on:
-  release:
-    types: [created]
-
+  push:
+    tags:
+      - "*"
 jobs:
   release:
     runs-on: ubuntu-latest
