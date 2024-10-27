@@ -129,19 +129,12 @@ pub fn obj2d<V: Into<Vec2d>>(
 
 #[derive(Debug)]
 pub struct Object2dBuilder {
-    #[allow(dead_code)]
     position: Vec2d,
-    #[allow(dead_code)]
     density: f32,
-    #[allow(dead_code)]
     mass: f32,
-    #[allow(dead_code)]
     velocity: Vec2d,
-    #[allow(dead_code)]
     acceleration: Vec2d,
-    #[allow(dead_code)]
     radius: f32,
-    #[allow(dead_code)]
     shape: Shape,
 }
 
