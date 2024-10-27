@@ -158,35 +158,43 @@ impl Object2dBuilder {
             shape: Shape::None,
         }
     }
-
+    #[must_use]
     pub fn position(mut self, vec: Vec2d) -> Self {
         self.position = vec;
         self
     }
 
+    #[must_use]
     pub fn density(mut self, density: f32) -> Self {
         self.density = density;
         self
     }
 
+    #[must_use]
     pub fn mass(mut self, mass: f32) -> Self {
         self.mass = mass;
         self
     }
 
+    #[must_use]
     pub fn velocity(mut self, vec: Vec2d) -> Self {
         self.velocity = vec;
         self
     }
 
+    #[must_use]
     pub fn acceleration(mut self, vec: Vec2d) -> Self {
         self.acceleration = vec;
         self
     }
+
+    #[must_use]
     pub fn radius(mut self, radius: f32) -> Self {
         self.radius = radius;
         self
     }
+
+    #[must_use]
     pub fn shape(mut self, shape: Shape) -> Self {
         self.shape = shape;
         self
