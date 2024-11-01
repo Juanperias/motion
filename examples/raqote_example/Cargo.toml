@@ -5,7 +5,7 @@ edition = "2021"
 
 [dependencies]
 minifb = { version = "0.27.0", features = ["wayland"] }
-motion = "0.1.4"
+motion = { path = "*" }
 # by default raqote asks for the fontconfig.pc lib installed but in this example it is not necessary.
 raqote = { version = "0.8.5", features = [
   "pathfinder_geometry",

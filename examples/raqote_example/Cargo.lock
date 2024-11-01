@@ -303,8 +303,6 @@ dependencies = [
 [[package]]
 name = "motion"
 version = "0.1.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c4d6a2daf29878349215175e013ded9ab4c0ff332b72865c8ed115b66416f16d"
 
 [[package]]
 name = "nix"
