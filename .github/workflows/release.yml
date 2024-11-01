@@ -2,8 +2,9 @@ name: Release Crate
 
 on:
   push:
-    tags:
-      - "*"
+    branches:
+      - main
+
 jobs:
   release:
     runs-on: ubuntu-latest
