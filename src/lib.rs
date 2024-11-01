@@ -11,13 +11,16 @@
 //! With this you already have record installed in your project, you can start with a simple event loop
 //!```rust
 //!use std::{thread, time::Duration};
-//!use motion::event_loop::{EventLoop, EventLoopConfig};
-//! // The definition of this function depends on the context in which motion is used
+//!
+//!use motion::event_loop::EventLoopBuilder;
+//!
+// The definition of this function depends on the context in which motion is used
 //!fn sleep(duration: Duration) {
-//!   thread::sleep(duration);
+//!    thread::sleep(duration);
 //!}
+//!
 //!fn main() {
-//!    let el = EventLoop::new(EventLoopConfig { fps: 1 });
+//!    let el = EventLoopBuilder::new().fps(1).build();
 //!
 //!    el.start(|_config| println!("Hello! in the event loop"), sleep);
 //!}

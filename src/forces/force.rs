@@ -10,7 +10,7 @@ use crate::obj::obj_2d::Object2d;
 /// struct Gravity;
 ///
 /// impl Force for Gravity {
-///     fn apply_2d(&self, obj: &mut Object2d) {
+///     fn apply_2d(&mut self, obj: &Object2d) {
 ///         // Apply gravitational force to obj
 ///     }
 /// }
