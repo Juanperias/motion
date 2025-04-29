@@ -1,5 +1,6 @@
 <img src="https://i.ibb.co/dDJLb0X/motion-Banner.png">
 
+## Deprecated, this project will probably be reincarnated in the form of another project that is somewhat better done
 # Motion🍃
 
 Motion is a **bare metal physics engine** with which you can make simulations easily and quickly, also in rust.
